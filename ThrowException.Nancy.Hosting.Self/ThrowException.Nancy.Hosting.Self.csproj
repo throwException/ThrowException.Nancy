@@ -10,9 +10,13 @@
     <AssemblyName>NancyEx.Hosting.Self</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <PackageVersion>2.0.1</PackageVersion>
-    <Authors>Exception</Authors>
+    <Authors>Stefan Thoeni</Authors>
     <PackageId>ThrowException.Nancy.Hosting.Self</PackageId>
     <Description>Based on the work of the NancyFX team</Description>
+    <PackageProjectUrl>https://github.com/throwException/ThrowException.Nancy</PackageProjectUrl>
+    <Owners>Stefan Thoeni</Owners>
+    <PackageLicenseUrl>https://github.com/throwException/ThrowException.Nancy/blob/master/license.txt</PackageLicenseUrl>
+    <Title>ThrowException.Nancy.Hosting.Self</Title>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
