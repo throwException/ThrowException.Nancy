@@ -32,6 +32,11 @@ namespace Nancy.Cryptography
             this.key = keyGenerator.GetBytes(PreferredKeySize);
         }
 
+        public DefaultHmacProvider(byte[] key)
+        {
+            this.key = key;
+        }
+
         /// <summary>
         /// Gets the length of the HMAC signature
         /// </summary>

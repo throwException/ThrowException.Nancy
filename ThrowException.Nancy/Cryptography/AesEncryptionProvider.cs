@@ -22,6 +22,12 @@ namespace Nancy.Cryptography
             this.key = keyGenerator.GetBytes(32);
         }
 
+        public AesEncryptionProvider(IKeyGenerator keyGenerator, byte[] key)
+        {
+            this.keyGenerator = keyGenerator;
+            this.key = key;
+        }
+
         /// <summary>
         /// Encrypt data
         /// </summary>
@@ -55,7 +61,7 @@ namespace Nancy.Cryptography
             {
                 var input = Convert.FromBase64String(data);
                 var iv = new byte[16];
-                input.CopyTo(iv, 0);
+                Array.Copy(input, 0, iv, 0, iv.Length);
 
                 using (var provider = Aes.Create())
                 using (var decryptor = provider.CreateDecryptor(this.key, iv))
