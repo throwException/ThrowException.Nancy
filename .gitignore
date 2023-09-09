@@ -1,0 +1,6 @@
+.vs
+packages
+bin
+obj
+mono_crash.*.json
+*.csproj.user

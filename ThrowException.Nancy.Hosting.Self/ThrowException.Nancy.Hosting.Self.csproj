@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{161A54AF-5CEF-421E-8E88-170681821082}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NancyEx.Hosting.Self</RootNamespace>
+    <AssemblyName>NancyEx.Hosting.Self</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <PackageVersion>2.0.1</PackageVersion>
+    <Authors>Exception</Authors>
+    <PackageId>ThrowException.Nancy.Hosting.Self</PackageId>
+    <Description>Based on the work of the NancyFX team</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UacHelper.cs" />
+    <Compile Include="NetSh.cs" />
+    <Compile Include="FileSystemRootPathProvider.cs" />
+    <Compile Include="UrlReservations.cs" />
+    <Compile Include="HostConfiguration.cs" />
+    <Compile Include="UriExtensions.cs" />
+    <Compile Include="IgnoredHeaders.cs" />
+    <Compile Include="AutomaticUrlReservationCreationFailureException.cs" />
+    <Compile Include="NancyHost.cs" />
+    <Compile Include="Properties\InternalsVisibleTo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThrowException.Nancy\ThrowException.Nancy.csproj">
+      <Project>{375EBF30-2181-4462-A7D7-D87B4F91D887}</Project>
+      <Name>ThrowException.Nancy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
+</Project>
